@@ -35,37 +35,37 @@ store:Vuexが入る。namespaceを使用し、ドメインごと分ける。一�
 ├── App.vue<br>
 ├── assets<br>
 ├── components<br>
-│   ├── globals<br>
-│   │   ├── Footer.vue<br>
-│   │   └── Header.vue<br>
-│   ├── pages<br>
-│   │   ├── EditGist.vue<br>
-│   │   ├── Gist.vue<br>
-│   │   ├── Home.vue<br>
-│   │   └── User.vue<br>
-│   └── parts<br>
-│       ├── Comments.vue<br>
-│       ├── Editor.vue<br>
-│       ├── GistCard.vue<br>
-│       ├── IconButton.vue<br>
-│       ├── Loading.vue<br>
-│       └── UserCard.vue<br>
+│　   ├── globals<br>
+│　   │　   ├── Footer.vue<br>
+│　   │　   └── Header.vue<br>
+│　   ├── pages<br>
+│　   │　   ├── EditGist.vue<br>
+│　   │　   ├── Gist.vue<br>
+│　   │　   ├── Home.vue<br>
+│　   │　   └── User.vue<br>
+│　   └── parts<br>
+│　　　       ├── Comments.vue<br>
+│　　　       ├── Editor.vue<br>
+│　　　       ├── GistCard.vue<br>
+│　　　       ├── IconButton.vue<br>
+│　　　       ├── Loading.vue<br>
+│　　　       └── UserCard.vue<br>
 ├── main.js<br>
 ├── router<br>
-│   └── index.js<br>
+│　   └── index.js<br>
 └── store<br>
-    ├── index.js<br>
-    ├── modules<br>
-    │   ├── gists<br>
-    │   │   ├── actions.js<br>
-    │   │   ├── getters.js<br>
-    │   │   ├── index.js<br>
-    │   │   ├── mutations.js<br>
-    │   │   └── state.js<br>
-    │   └── users<br>
-    │       ├── actions.js<br>
-    │       ├── getters.js<br>
-    │       ├── index.js<br>
-    │       ├── mutations.js<br>
-    │       └── state.js<br>
-    └── utils.js<br>
+　    ├── index.js<br>
+　    ├── modules<br>
+　    │　   ├── gists<br>
+　    │　   │　   ├── actions.js<br>
+　    │　   │　   ├── getters.js<br>
+　    │　   │　   ├── index.js<br>
+　    │　   │　   ├── mutations.js<br>
+　    │　   │　   └── state.js<br>
+　    │　   └── users<br>
+　    │　　       ├── actions.js<br>
+　    │　　       ├── getters.js<br>
+　    │　　       ├── index.js<br>
+　    │　　       ├── mutations.js<br>
+　    │　　       └── state.js<br>
+　    └── utils.js<br>
