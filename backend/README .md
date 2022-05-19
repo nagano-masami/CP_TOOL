@@ -7,5 +7,8 @@ npm -v
 8.7.0
 
 $ sudo service mysql start
+$ npm start
+
+# 参考
 $ service mysql status
 $ sudo mysql -u root -p

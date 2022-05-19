@@ -11,6 +11,7 @@ export default new Vuex.Store({
     userId: '',
     password: ''
   },
+  getters: {},
   mutations: {
     login(state, param) {
       state.isLogin = true;
