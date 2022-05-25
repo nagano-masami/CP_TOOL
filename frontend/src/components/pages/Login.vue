@@ -41,8 +41,12 @@
               </v-form>
             </v-card-text>
             <v-card-actions>
-              <v-row align="center" justify="space-around">
-                <v-btn color="#B2EBF2" @click="login">Login</v-btn>
+              <v-row>
+                <v-col>
+                  <div align="center">
+                    <v-btn color="#B2EBF2" @click="login">Login</v-btn>
+                  </div>
+                </v-col>
               </v-row>
             </v-card-actions>
           </v-card>
