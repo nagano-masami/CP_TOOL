@@ -1,4 +1,5 @@
 var express = require('express');
+//A router is valid middleware.
 var router = express.Router();
 
 var mysql = require('mysql');
