@@ -4,6 +4,7 @@
 
 ## :globe_with_meridians:アプリURL
 http://localhost:8080/
+http://localhost:3000/
 
 <br>
 
@@ -28,10 +29,10 @@ https://qiita.com/tky_st/items/03faba81129e4877c3ea#%E6%AC%A1%E3%81%ABmysql%E3%8
 ## :four_leaf_clover: 機能一覧
 |  実装内容  |  追加説明  |
 | ---- | ---- |
-|  ユーザー登録<br>ログイン機能<br>アカウント情報設定機能  |  deviceで実装  |
-|  ゲストログイン機能  |    |
-| マイページ機能 | |
-|  管理者画面  |  activeadminで実装  |
+|  ログイン機能<br>  |  |
+|  チャット機能<br>  |  |
+|  |  |
+|  |  |
 
 <br>
 
