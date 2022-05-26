@@ -12,7 +12,18 @@
       </v-row>
       <v-row align="center" justify="center">
         <v-col cols="12" sm="8" md="6" lg="4">
-          <v-card class="elevation-12">
+          <v-card
+            class="elevation-12"
+            :loading="loading"
+            >
+            <template slot="progress">
+              <v-overlay absolute>
+                <div class="text-center py-12">
+                  <div class="headline">Now Loading...</div>
+                  <v-progress-circular :size="56" width="8" color="primary" indeterminate></v-progress-circular>
+                </div>
+              </v-overlay>
+            </template>
             <v-toolbar color="primary" dark flat>
               <v-toolbar-title>Login form</v-toolbar-title>
               <v-spacer></v-spacer>
@@ -44,7 +55,7 @@
               <v-row>
                 <v-col>
                   <div align="center">
-                    <v-btn color="#B2EBF2" @click="login">Login</v-btn>
+                    <v-btn color="#B2EBF2" @click="login" :disabled="loading" v-text="loadLabel"></v-btn>
                   </div>
                 </v-col>
               </v-row>
@@ -57,6 +68,7 @@
 </template>
 
 <script>
+//v-bindを「:」v-onを「@」v-slotを「#」で省略して記述することができます。
 export default {
   name: "login-system",
   components: {},
@@ -64,14 +76,23 @@ export default {
     showPassword: false,
     userId: "",
     password: "",
+    loading: false,
+    loadLabel: "LOGIN"
   }),
   methods: {
     login() {
       // 入力されたログイン情報が正しいか確認
       this.$store.dispatch("login", {
         userId: this.userId,
-        password: this.password,
-      });
+        password: this.password
+      }),
+      //loadingの設定
+      this.loading = true,
+      this.loadLabel = "Now Loading",
+      setTimeout(() => {
+        this.loading = false,
+        this.loadLabel = "LOGIN"
+      },5000)
     },
   },
 };
