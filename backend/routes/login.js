@@ -9,13 +9,13 @@ const config  = require('../public/javascripts/db_config.js');
 router.post('/', function (req, res, next) {
 
     // フロントからのパラメータ取得
-    const userId = req.body.userId;
+    const id = req.body.id;
     const password = req.body.password;
 
     // コネクションの用意
     const connection = mysql.createConnection(config.mysql_setting);
 
-    connection.query(config.loginSQL, [userId, password],
+    connection.query(config.loginSQL, [id, password],
         function (error, results, fields) {
             console.log(results);
             if (results.length >= 1) {

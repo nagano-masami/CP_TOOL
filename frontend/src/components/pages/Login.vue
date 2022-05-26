@@ -31,11 +31,11 @@
             <v-card-text>
               <v-form>
                 <v-text-field
-                  label="UserId"
+                  label="id"
                   name="login"
                   prepend-icon="mdi-account"
                   type="text"
-                  v-model="userId"
+                  v-model="id"
                 ></v-text-field>
 
                 <v-text-field
@@ -74,7 +74,7 @@ export default {
   components: {},
   data: () => ({
     showPassword: false,
-    userId: "",
+    id: "",
     password: "",
     loading: false,
     loadLabel: "LOGIN"
@@ -83,7 +83,7 @@ export default {
     login() {
       // 入力されたログイン情報が正しいか確認
       this.$store.dispatch("login", {
-        userId: this.userId,
+        id: this.id,
         password: this.password
       }),
       //loadingの設定
