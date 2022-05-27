@@ -31,7 +31,7 @@
             <v-card-text>
               <v-form>
                 <v-text-field
-                  label="id"
+                  label="ID"
                   name="login"
                   prepend-icon="mdi-account"
                   type="text"
