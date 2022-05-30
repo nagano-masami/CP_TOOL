@@ -50,19 +50,20 @@
      // レコード件数の取得
      connection.query(config.getHistoriesSQL, function (error, results, fields) {
        const countUpNum = results.length + 1;
-       data.index = countUpNum
+       data.id = countUpNum
        results.push(data);
+       //console.log(data);
        // 後続の作業を待つ必要がないため、フロントに値を返す。
        io.emit('MESSAGE', results)
  
        // レコード挿入
-       connection.query(config.insertRecordSQL, [countUpNum, data.user_id, data.message, data.date_time],
+       connection.query(config.insertRecordSQL, [countUpNum, data.user_id, data.message, data.create_date],
          function (error, results, fields) {
            // ログ出力
            if (!error) {
-             console.log(`INSERT成功：${results}`);
+             console.log(`INSERT成功:${results}`);
            } else {
-             console.log(`INSERT失敗：${error}`);
+             console.log(`INSERT失敗:${error}`);
            }
          }
        );
