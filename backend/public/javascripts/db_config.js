@@ -6,6 +6,6 @@ exports.mysql_setting = {
     timezone: 'jst'
 };
 exports.loginSQL = 'SELECT * from USERS where id=? AND password=?'
-exports.insertRecordSQL = 'INSERT INTO chat_histories(history_index,user_id,message,date_time) VALUES(?, ?, ?, ?)';
-exports.getHistoriesSQL = 'SELECT * FROM chat_histories';
-exports.deleteHistorySQL = 'TRUNCATE TABLE chat_histories';
+exports.insertRecordSQL = 'INSERT INTO CHATS(id,user_id,message,create_date) VALUES(?, ?, ?, ?)';
+exports.getHistoriesSQL = 'SELECT * FROM CHATS';
+exports.deleteHistorySQL = 'TRUNCATE TABLE CHATS';

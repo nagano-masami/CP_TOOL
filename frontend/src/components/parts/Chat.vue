@@ -8,23 +8,23 @@
           <v-btn @click="deleteRecord">Delete Old Chat</v-btn>
         </v-toolbar>
         <!-- v-card内チャットをスクロールさせるためにclass="overflow-y-auto"を指定 -->
-        <v-card height="90%" width="20%" class="overflow-y-auto">
+        <v-card height="90%" width="100%" class="overflow-y-auto">
           <!-- チャットの表示 -->
           <v-list two-line subheader>
-            <v-list-item v-for="(message,index) in messages" :key="index">
+            <v-list-item v-for="(message,id) in messages" :key="id">
               <v-list-item-avatar>
                 <v-icon>mdi-account-circle</v-icon>
               </v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title v-text="message.id"></v-list-item-title>
+                <v-list-item-title v-text="message.user_id"></v-list-item-title>
                 <v-list-item-subtitle v-text="message.message"></v-list-item-subtitle>
-                <v-list-item-subtitle v-text="message.date_time"></v-list-item-subtitle>
+                <v-list-item-subtitle v-text="message.create_date"></v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-divider inset v-if="messages.length > 0"></v-divider>
           </v-list>
         </v-card>
-        <v-card height="10%" width="20%" color="#B2DFDB" class="pa-sm-3 pa-lg-3 pa-md-4">
+        <v-card height="10%" width="100%" color="#B2DFDB" class="pa-sm-3 pa-lg-3 pa-md-4">
           <v-text-field
             v-model="message"
             solo
@@ -48,15 +48,15 @@ export default {
   data: () => ({
     message: "",
     messages: [],
-    id: "",
+    user_id: "",
     socket: "",
   }),
   methods: {
     //チャットを投稿する処理
     sendMessage() {
-      this.id = this.$store.state.id;
+      this.user_id = this.$store.state.id;
       const date = new Date();
-      const date_time = `${date.getFullYear().toString()}-${(
+      const create_date = `${date.getFullYear().toString()}-${(
         "00" + (date.getMonth() + 1).toString()
       ).slice(-2)}-${("00" + date.getDate().toString()).slice(-2)} ${(
         "00" + date.getHours().toString()
@@ -66,9 +66,9 @@ export default {
 
       // Socketを利用してサーバと通信を行う。
       this.socket.emit("SEND_MESSAGE", {
-        id: this.id,
+        user_id: this.user_id,
         message: this.message,
-        date_time: date_time,
+        create_date: create_date,
       });
       this.message = "";
     },
