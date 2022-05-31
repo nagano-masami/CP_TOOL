@@ -3,7 +3,7 @@
 <br>
 
 ## :globe_with_meridians:アプリURL
-http://localhost:8080/
+http://localhost:8080/ <br>
 http://localhost:3000/
 
 <br>
@@ -23,6 +23,8 @@ https://docs.microsoft.com/ja-jp/windows/dev-environment/javascript/nodejs-on-ws
 
 Vue.js+Node.jsを利用したチャットアプリの作成<br>
 https://qiita.com/tky_st/items/03faba81129e4877c3ea#%E6%AC%A1%E3%81%ABmysql%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A%E3%82%92%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%99
+vue  https://github.com/TakayaTanuki/chatapp-frontend
+node https://github.com/TakayaTanuki/chatapp-backend
 
 <br>
 
@@ -42,3 +44,9 @@ CP_TOOL\backend\ERdiagram.png
 <br>
 
 ## 追加を予定している機能
+ユーザ管理・権限
+マスタ管理（顧客、装置、機器、協力会社、カテゴリ、適用法規、業種、工事名称、工事項目）
+受領見積（結合、管理）
+機器別工事項目（管理、年代別）
+協力会社工事項目（管理）
+星取表（管理）
