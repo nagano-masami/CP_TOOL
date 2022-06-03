@@ -90,7 +90,7 @@ export default {
   },
 
   async mounted() {
-    this.socket = io("localhost:3000");
+    this.socket = io("http://localhost:3000");
 
     // 初期表示時にDBのレコードを取得する
     try {

@@ -10,6 +10,8 @@
  
  /**
   * Get port from environment and store in Express.
+  * 本番環境で環境変数PORTにポート番号を設定できる
+  * normalizePort:環境変数の設定を判定
   */
  
  var port = normalizePort(process.env.PORT || '3000');
@@ -17,17 +19,24 @@
  
  /**
   * Create HTTP server.
+  * httpモジュールを使わなくてもapp.listen(port)でサーバを起動できる
   */
  
  var server = http.createServer(app);
  
  /**
-  * ADDED!! Require Socket.IO
+  * ADDED!! Require Socket.IO *追加
   */
- var io = require('socket.io')(server);
+ var io = require('socket.io')(server, {
+  cors: {
+    origin: "http://localhost:8080",
+    credentials: true
+  }
+});
  
  /**
   * Listen on provided port, on all network interfaces.
+  * server.on()で各イベントにイベントハンドラーを設定
   */
  
  server.listen(port);
@@ -35,14 +44,16 @@
  server.on('listening', onListening);
  
  /**
-  * ADDED!! Socket.IO Connection.
+  * ADDED!! Socket.IO Connection. *追加
   */
  var mysql = require('mysql');
  const config  = require('../public/javascripts/db_config.js');
  
  io.on('connection', function (socket) {
+   console.log('conected');
    // フロント側からチャットが投下された時に発火するイベント
    socket.on('SEND_MESSAGE', function (data) {
+     console.log(data);
  
      // コネクションの用意
      const connection = mysql.createConnection(config.mysql_setting);
