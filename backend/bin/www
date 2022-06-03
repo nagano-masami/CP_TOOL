@@ -34,7 +34,7 @@
     allowEIO3: false
   }
 });
- 
+
  /**
   * Listen on provided port, on all network interfaces.
   * server.on()で各イベントにイベントハンドラーを設定
@@ -51,8 +51,7 @@
  const config  = require('../public/javascripts/db_config.js');
  
  io.on('connection', function (socket) {
-   const version = socket.conn.protocol;
-   console.log(version);
+   console.log('connected');
    // フロント側からチャットが投下された時に発火するイベント
    socket.on('SEND_MESSAGE', function (data) {
      console.log(data);
