@@ -70,6 +70,7 @@ export default {
         message: this.message,
         create_date: create_date,
       });
+      console.log('emited');
       this.message = "";
     },
     // 投稿したチャットの削除
@@ -90,6 +91,7 @@ export default {
   },
 
   async mounted() {
+    console.log('mounted');
     this.socket = io("http://localhost:3000");
 
     // 初期表示時にDBのレコードを取得する
